@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SeriesList from "../../components/SeriesList";
 import Loader from "../../components/Loader";
+import Intro from "../../components/Intro";
 
 class Series extends Component {
   state = {
@@ -20,7 +21,8 @@ class Series extends Component {
     const { series, seriesName, isFeatching } = this.state;
     return (
       <div>
-        Number of TV Shows founded = {this.state.series.length}
+        <Intro message="Here you can find all your TV Shows!" />
+        Number of TV Shows founded: {this.state.series.length}
         <div>
           <input
             value={seriesName}
