@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import SeriesList from "../../components/SeriesList";
 import Loader from "../../components/Loader";
 import Intro from "../../components/Intro";
+import "./series.css";
 
 class Series extends Component {
   state = {
@@ -20,15 +21,21 @@ class Series extends Component {
   render() {
     const { series, seriesName, isFeatching } = this.state;
     return (
-      <div>
-        <Intro message="Here you can find all your TV Shows!" />
-        Number of TV Shows founded: {this.state.series.length}
+      <div className="column">
         <div>
-          <input
-            value={seriesName}
-            type="text"
-            onChange={this.onSeriesInputChange}
-          />
+          <Intro message="Here you can find all TV Shows!" />
+          <h5>Number of TV Shows founded: {this.state.series.length}</h5>
+        </div>
+        <div>
+          <form className="form-inline ">
+            <input
+              value={seriesName}
+              className="form-control mr-sm-2 rounded-pill border-end-0 border"
+              type="search"
+              aria-label="Search"
+              onChange={this.onSeriesInputChange}
+            />
+          </form>
         </div>
         {!isFeatching && series.length === 0 && seriesName.trim() === "" && (
           <p>Please type TV Show name!</p>
@@ -37,7 +44,9 @@ class Series extends Component {
           <p>No TV Shows have been found...</p>
         )}
         {isFeatching && <Loader />}
-        <SeriesList list={this.state.series} />
+        <div>
+          <SeriesList list={this.state.series} />
+        </div>
       </div>
     );
   }

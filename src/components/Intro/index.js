@@ -1,7 +1,11 @@
 import React from "react";
 
 const Intro = (props) => {
-  return <div>{props.message}</div>;
+  return (
+    <div>
+      <h2>{props.message}</h2>
+    </div>
+  );
 };
 
 export default Intro;
