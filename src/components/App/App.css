@@ -1,5 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+* {
+  font-family: "Oswald", sans-serif !important;
+}
 .App {
   text-align: center;
+}
+a:hover {
+  color: rgb(65, 150, 179) !important;
 }
 
 .App-header {

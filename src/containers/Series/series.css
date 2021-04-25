@@ -1,6 +1,10 @@
 .form-inline {
   padding: 1rem 0 1rem 40%;
 }
+.form-control {
+  color: rgb(65, 150, 179) !important;
+}
+
 body {
   background-color: lightpink;
   color: azure;
